@@ -1,0 +1,13 @@
+caption always "%{= .y}%H%{.g}|%{.G}%?%-Lw%?%{.C}%n*%f%t%?(%u)%?%{.c}%?%+Lw%?%?|%{.c}%h%?|%=%c %{.c}%d.%m.%Y}"
+defutf8 on
+vbell off
+autodetach on
+nethack on
+startup_message off
+defscrollback 10000
+bindkey -k F1 prev
+bindkey -k F2 next
+bindkey -k k8 kill
+bindkey -k k9 screen
+screen -t $USER 0
+screen -t $USER 1
