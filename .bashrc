@@ -13,8 +13,8 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 #PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\]\$"
-
-PS1="\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\$ "
+#PS1="\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\$ "
+PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\$ "
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
