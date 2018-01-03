@@ -2,8 +2,10 @@
 
 set nocompatible    " use vim defaults
 set ls=2            " allways show status line
-set tabstop=4       " numbers of spaces of tab character
-set shiftwidth=4    " numbers of spaces to (auto)indent
+set tabstop=2       " numbers of spaces of tab character
+set shiftwidth=2    " numbers of spaces to (auto)indent
+set softtabstop=2
+set smarttab
 set scrolloff=3     " keep 3 lines when scrolling
 set showcmd         " display incomplete commands
 set hlsearch        " highlight searches
@@ -25,17 +27,18 @@ set nostartofline   " don't jump to first character when paging
 set whichwrap=b,s,h,l,<,>,[,]   " move freely between files
 "set viminfo='20,<50,s10,h
 
-"set autoindent     " always set autoindenting on
-"set smartindent        " smart indent
-"set cindent            " cindent
-set noautoindent
-set nosmartindent
-set nocindent
+set autoindent     " always set autoindenting on
+set smartindent        " smart indent
+set cindent            " cindent
+"set noautoindent
+"set nosmartindent
+"set nocindent
 
 "set autowrite      " auto saves changes when quitting and swiching buffer
 "set expandtab      " tabs are converted to spaces, use only when required
 "set sm             " show matching braces, somewhat annoying...
 "set nowrap         " don't wrap lines
+set paste
 
 syntax on           " syntax highlighing
 if has("gui_running")
@@ -77,7 +80,9 @@ if has("autocmd")
     " File formats
     au BufNewFile,BufRead  *.phtml  set syntax=php
     au BufNewFile,BufRead  *.pls    set syntax=dosini
+		" au BufRead,BufNewFile  /etc/nginx/* set ft=nginx
     au BufNewFile,BufRead  modprobe.conf    set syntax=modconf
+		au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,*/nginx*.conf,*/nginx/* if &ft == '' | setfiletype nginx | endif
 
     " Ctrl+X O
     autocmd FileType python set omnifunc=pythoncomplete#Complete
