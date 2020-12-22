@@ -55,6 +55,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nnoremap <F2> :set nonumber \| :IndentLinesDisable \| :set laststatus=0 \| :set noruler \| :set noshowmode \| :set noshowcmd \| :set paste<CR>
+nnoremap <F3> :set number \| :IndentLinesEnable \| set laststatus=2 \| set ruler \| :set showmode \| :set showcmd \| :set nopaste<CR>
 
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 "let g:ale_lint_on_text_changed = 'never'
