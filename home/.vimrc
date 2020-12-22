@@ -31,7 +31,8 @@ set statusline+=%#LineNr#
 set statusline+=\ %f\ %m
 set statusline+=%=
 set statusline+=%#CursorColumn#
-set statusline+=\[%{&fileencoding?&fileencoding:&encoding}\ %{&fileformat}\]
+set statusline+=%y
+set statusline+=\ \[%{&fileencoding?&fileencoding:&encoding}\ %{&fileformat}\]
 set statusline+=\ \[%l:%c\ %L\ %p%%\]
 set statusline+=\ \[%b\]
 set statusline+=\ %r\ %m
