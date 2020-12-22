@@ -8,5 +8,5 @@ for f in .bashrc .vimrc .screenrc .inputrc .config/yamllint/config; do
 done;
 
 curl -fsLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim -E -s +PlugInstall +visual +qall
+vim +PlugInstall +qall > /dev/null 2>&1
 
