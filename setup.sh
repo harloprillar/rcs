@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 CMD=$(which yum || which apt-get)
-$CMD install -y yamlling git wget curl
+$CMD install -y yamllint git wget curl
 
 for f in .bashrc .vimrc .screenrc .inputrc .config/yamllint/config; do 
 	wget https://raw.githubusercontent.com/harloprillar/rcs/master/home/$f -O ~/$f 

@@ -25,9 +25,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 alias ls="ls -Gp"
-alias kubectl="microk8s kubectl"
-alias helm="microk8s helm"
-alias helm3="microk8s helm3"
+#alias kubectl="microk8s kubectl"
+#alias helm="microk8s helm"
+#alias helm3="microk8s helm3"
 
 if [ -x /usr/bin/dircolors ]; then
   | test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
