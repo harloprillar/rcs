@@ -51,3 +51,13 @@ export TERM='xterm-256color'
 #  source /usr/share/powerline/bindings/bash/powerline.sh
 #fi
 
+# FUNCTIONS
+
+function chkcertexpiry() {
+  local FROM TO DAYS
+  IFS=$'\t' read -r FROM TO \
+    < <(sed -r 's/notBefore=(.+) notAfter=(.+)/\1\t\2/' \
+    <<< $(echo | openssl s_client -connect $1:443 -servername $1 2>/dev/null | openssl x509 -noout -dates))
+  echo $(date -d "$FROM" '+%Y-%m-%d') $(date -d "$TO" '+%Y-%m-%d') "$(( ($(date -d "$TO" "+%s")-$(date "+%s"))/86400 ))"
+}
+
