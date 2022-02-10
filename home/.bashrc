@@ -40,7 +40,7 @@ fi
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 export LANG=en_US.UTF-8
 export EDITOR=vim
-export MANPAGER=less
+export MANPAGER="less -r"
 export PATH="${HOME}/bin/:${PATH}"
 export TERM='xterm-256color'
 
